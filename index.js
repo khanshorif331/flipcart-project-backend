@@ -19,7 +19,7 @@ app.use('/', router)
 
 dotenv.config()
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 
 const USERNAME = process.env.DB_USERNAME
 const PASSWORD = process.env.DB_PASSWORD
