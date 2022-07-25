@@ -3,6 +3,7 @@ import Connection from './database/db.js'
 import dotenv from 'dotenv'
 import DefaultData from './default.js'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 
 import router from './routes/route.js'
 
@@ -10,7 +11,9 @@ const app = express()
 
 // middleware
 app.use(cors())
-app.use(express.json())
+app.use(bodyParser.json({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(express.json())
 
 app.use('/', router)
 
