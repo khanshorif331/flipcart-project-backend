@@ -2,13 +2,13 @@ import User from '../model/user-schema.js'
 
 export const userSignup = async (req, res) => {
 	try {
-		// const exist = await User.findone({ username: req.body.username })
-		// console.log(exist)
-		// if (exist) {
-		// 	return res.status(401).json({
-		// 		message: 'Username already exists',
-		// 	})
-		// }
+		const exist = await User.findOne({ username: req.body.username })
+		console.log(exist)
+		if (exist) {
+			return res.status(401).json({
+				message: 'Username already exists',
+			})
+		}
 		const user = req.body
 		console.log(user, 'user')
 		const newUser = new User(user)
