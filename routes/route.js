@@ -4,6 +4,10 @@ import { getProducts } from '../controller/product-controller.js'
 
 const router = express.Router()
 
+router.get('/', (req, res) => {
+	res.send('Welcome to flipcart server')
+})
+
 router.post('/signup', userSignup)
 router.post('/login', userLogin)
 
