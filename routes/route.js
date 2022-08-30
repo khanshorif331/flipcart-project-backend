@@ -5,6 +5,8 @@ import {
 	getProductById,
 } from '../controller/product-controller.js'
 
+import { addPaymentGateway } from '../controller/payment-controller.js'
+
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -16,5 +18,8 @@ router.post('/login', userLogin)
 
 router.get('/products', getProducts)
 router.get('/product/:id', getProductById)
+
+// payment
+router.post('/payment', addPaymentGateway)
 
 export default router
