@@ -24,7 +24,11 @@ const PORT = process.env.PORT || 5000
 const USERNAME = process.env.DB_USERNAME
 const PASSWORD = process.env.DB_PASSWORD
 
-Connection(USERNAME, PASSWORD)
+const URL =
+	process.env.MONGODB_URI ||
+	`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.nznvb.mongodb.net/?retryWrites=true&w=majority`
+
+Connection(URL)
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`)
