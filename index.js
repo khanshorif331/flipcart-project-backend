@@ -30,10 +30,10 @@ const URL =
 
 Connection(URL)
 
-// in heroku NODE_ENV is set to production
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'))
-}
+// // in heroku NODE_ENV is set to production
+// if (process.env.NODE_ENV === 'production') {
+// 	app.use(express.static('client/build'))
+// }
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`)
